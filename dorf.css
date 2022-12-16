@@ -1,0 +1,65 @@
+:root {
+    --character-open: url("Internet URL to the opened-state image for this user");
+    --character-closed: url("Internet URL to the closed-state image for this user");
+}
+
+/* Hide Yourself if you need to */
+li.voice-state[data-reactid*="YOUR-full-discord-user-id"] {
+    display: none;
+}
+
+li.voice-state {
+    display: inline-block;
+    padding-right: 2em;
+}
+
+/* this block, and the next block (.speaking), are on a PER-AVATAR/USER basis, so you will need to copy-paste this and edit the code for EACH
+USER that will be in the Discord chat */
+li.voice-state[data-reactid*="full-discord-user-id"] .avatar {
+    content: var(--character-closed) !important;
+    height: 256px !important;
+    width: 256px !important;
+    border-radius: 0% !important;
+    /*Change brightness to 100%, if you don’t want the image to dim*/
+}
+
+li.voice-state[data-reactid*="full-discord-user-id"] .avatar.speaking {
+    border-color: rgba(0, 0, 0, 0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    content: var(--character-open) !important;
+}
+
+
+
+
+
+@keyframes speak-now {
+    0% {
+        bottom: 0px;
+    }
+
+    15% {
+        bottom: 25px;
+    }
+
+    30% {
+        bottom: 0px;
+    }
+}
+
+li.voice-state {
+    position: static;
+}
+
+div.user {
+    display: none;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0px auto;
+    overflow: hidden;
+}
