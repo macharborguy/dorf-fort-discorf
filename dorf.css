@@ -1,152 +1,168 @@
 :root {
     /* --character-open: url("");
     --character-closed: url(""); */
-
+  
     
-    --goobs-open: url("https://github.com/macharborguy/dorf-fort-discorf/blob/d488cbfaa7f1763533e31a4ff1e42a3902b6dceb/art/goobs-open.png");
-    --goobs-closed: url("https://github.com/macharborguy/dorf-fort-discorf/blob/d488cbfaa7f1763533e31a4ff1e42a3902b6dceb/art/goobs-closed.png");
+    --goobs-open: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116657278976/goobs-open.png");
+    --goobs-closed: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116359475421/goobs-closed.png");
     
-    --dag-open: url("https://github.com/macharborguy/dorf-fort-discorf/blob/d488cbfaa7f1763533e31a4ff1e42a3902b6dceb/art/dag-open.png");
-    --dag-closed: url("https://github.com/macharborguy/dorf-fort-discorf/blob/d488cbfaa7f1763533e31a4ff1e42a3902b6dceb/art/dag-closed.png");
+    --dag-open: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116082647070/dag-open.png");
+    --dag-closed: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832115797438464/dag-closed.png");
     
-
-    --rob-open: url("https://github.com/macharborguy/dorf-fort-discorf/blob/d488cbfaa7f1763533e31a4ff1e42a3902b6dceb/art/rob-open.png");
-    --rob-closed: url("https://github.com/macharborguy/dorf-fort-discorf/blob/d488cbfaa7f1763533e31a4ff1e42a3902b6dceb/art/rob-closed.png");
-}
-
-/* Hide Yourself if you need to */
-li.voice-state[data-reactid*="YOUR-full-discord-user-id"] {
+  
+    --rob-open: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832117185761332/rob-open.png");
+    --rob-closed: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116934094899/rob-closed.png");
+  }
+  
+  
+  
+  body, #root {
+    overflow: hidden !important;
+  }
+  
+  
+  
+  [class*="Voice_voiceStates__"] {
+    display: flex; 
+    align-items: flex-end; 
+    padding:16px;
+  } 
+  
+  
+  
+  [class*="Voice_voiceState__"] {
+    height: auto; 
+    margin-bottom: 0px;
+    transform: scale(0.75);
+  } 
+  
+  
+  
+  [class*="Voice_avatar__"] {
+    filter: brightness(70%);
+  } 
+  
+  
+  
+  [class*="Voice_avatarSpeaking__"] {
+    position: relative; 
+    animation: 0ms infinite alternate ease-in-out null; 
+    filter: brightness(100%) drop-shadow(2px 2px 0px #FFFFFF) drop-shadow(-2px -2px 0px #FFFFFF) drop-shadow(-2px 2px 0px #FFFFFF) drop-shadow(2px -2px 0px #FFFFFF); 
+    animation-duration: 750ms;
+  }  
+  
+  
+  [class*="Voice_name__"] {
     display: none;
-}
-
-li.voice-state {
-    display: inline-block;
-    padding-right: 2em;
-}
-
-/* this block, and the next block (.speaking), are on a PER-AVATAR/USER basis, so you will need to copy-paste this and edit the code for EACH
-USER that will be in the Discord chat */
-li.voice-state[data-reactid*="full-discord-user-id"] .avatar {
-    content: var(--character-closed) !important;
-    height: 256px !important;
-    width: 256px !important;
-    border-radius: 0% !important;
-    /*Change brightness to 100%, if you don’t want the image to dim*/
-}
-
-li.voice-state[data-reactid*="full-discord-user-id"] .avatar.speaking {
-    border-color: rgba(0, 0, 0, 0) !important;
-    position: relative;
-    animation-name: speak-now;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    content: var(--character-open) !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* this block, and the next block (.speaking), are on a PER-AVATAR/USER basis, so you will need to copy-paste this and edit the code for EACH
-USER that will be in the Discord chat */
-li.voice-state[data-reactid*="80164863602601984"] .avatar {
-    content: var(--goobs-closed) !important;
-    height: 256px !important;
-    width: 256px !important;
-    border-radius: 0% !important;
-    /*Change brightness to 100%, if you don’t want the image to dim*/
-}
-
-li.voice-state[data-reactid*="80164863602601984"] .avatar.speaking {
-    border-color: rgba(0, 0, 0, 0) !important;
-    position: relative;
-    animation-name: speak-now;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    content: var(--goobs-open) !important;
-}
-
-
-
-/* this block, and the next block (.speaking), are on a PER-AVATAR/USER basis, so you will need to copy-paste this and edit the code for EACH
-USER that will be in the Discord chat */
-li.voice-state[data-reactid*="110593521731268608"] .avatar {
-    content: var(--dag-closed) !important;
-    height: 256px !important;
-    width: 256px !important;
-    border-radius: 0% !important;
-    /*Change brightness to 100%, if you don’t want the image to dim*/
-}
-
-li.voice-state[data-reactid*="110593521731268608"] .avatar.speaking {
-    border-color: rgba(0, 0, 0, 0) !important;
-    position: relative;
-    animation-name: speak-now;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    content: var(--dag-open) !important;
-}
-
-
-
-/* this block, and the next block (.speaking), are on a PER-AVATAR/USER basis, so you will need to copy-paste this and edit the code for EACH
-USER that will be in the Discord chat */
-li.voice-state[data-reactid*="100288457162637312"] .avatar {
-    content: var(--rob-closed) !important;
-    height: 256px !important;
-    width: 256px !important;
-    border-radius: 0% !important;
-    /*Change brightness to 100%, if you don’t want the image to dim*/
-}
-
-li.voice-state[data-reactid*="100288457162637312"] .avatar.speaking {
-    border-color: rgba(0, 0, 0, 0) !important;
-    position: relative;
-    animation-name: speak-now;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    content: var(--rob-open) !important;
-}
-
-
-
-
-
-@keyframes speak-now {
+  }
+  
+  
+  @keyframes speak-border {
     0% {
-        bottom: 0px;
+      filter: drop-shadow(2px 2px 0px #FFFFFF) drop-shadow(-2px -2px 0px #FFFFFF) drop-shadow(-2px 2px 0px #FFFFFF) drop-shadow(2px -2px 0px #FFFFFF);
+      filter: none;
     }
-
-    15% {
-        bottom: 25px;
+    50% {
+      filter: drop-shadow(2px 2px 0px #FFFFFF) drop-shadow(-2px -2px 0px #FFFFFF) drop-shadow(-2px 2px 0px #FFFFFF) drop-shadow(2px -2px 0px #FFFFFF);
+      filter: none;
     }
-
-    30% {
-        bottom: 0px;
+    100% {
+      filter: drop-shadow(2px 2px 0px #FFFFFF) drop-shadow(-2px -2px 0px #FFFFFF) drop-shadow(-2px 2px 0px #FFFFFF) drop-shadow(2px -2px 0px #FFFFFF);
+      filter: none;
     }
-}
-
-li.voice-state {
-    position: static;
-}
-
-div.user {
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* ROB */
+  
+  img[src*="avatars/100288457162637312"] {
+    content: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116934094899/rob-closed.png");
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    border-radius: 0;
+    border: none;
+    animation-name: mouth-100288457162637312
+  }
+  /* img:not([src*="avatars/100288457162637312"]), img:not([src*="avatars/100288457162637312"]) + [class*="Voice_user__"] {
     display: none;
-}
-
-body {
-    background-color: rgba(0, 0, 0, 0);
-    margin: 0px auto;
-    overflow: hidden;
-}
+  } */
+  
+  @keyframes mouth-100288457162637312 {
+    0% {}
+    50%{ content: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832117185761332/rob-open.png"); }
+    100% {}
+  }
+  
+  
+  
+  
+  
+  
+  
+  img[src*="avatars/80164863602601984"] {
+    content: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116359475421/goobs-closed.png");
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    border-radius: 0;
+    border: none;
+    animation-name: mouth-80164863602601984
+  }
+  /* img:not([src*="avatars/80164863602601984"]), img:not([src*="avatars/80164863602601984"]) + [class*="Voice_user__"] {
+    display: none;
+  } */
+  
+  @keyframes mouth-80164863602601984 {
+    0% {}
+    50%{ content: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116657278976/goobs-open.png"); }
+    100% {}
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Dagwood */
+  
+  img[src*="avatars/110593521731268608"] {
+    content: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832115797438464/dag-closed.png");
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    border-radius: 0;
+    border: none;
+    animation-name: mouth-110593521731268608
+  }
+  /* img:not([src*="avatars/110593521731268608"]), img:not([src*="avatars/110593521731268608"]) + [class*="Voice_user__"] {
+    display: none;
+  } */
+  
+  @keyframes mouth-110593521731268608 {
+    0% {}
+    50%{ content: url("https://cdn.discordapp.com/attachments/1038533224827191369/1083832116082647070/dag-open.png"); }
+    100% {}
+  }
+  
+  
+  
+  
